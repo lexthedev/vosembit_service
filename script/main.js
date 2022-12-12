@@ -3,8 +3,18 @@ addEventListener('DOMContentLoaded', () => {
         animateTextInLink(e);
     });
     enableShowBlockOneAfterAnother();
-    enableTitleShortener()
+    enableTitleShortener();
+    duplicateTextForTicker();
 })
+
+//#region ticker animation
+function duplicateTextForTicker() {
+    const tickerText = document.querySelector('.disables-string .ticker').innerText;
+    const style = document.createElement('style');
+    style.innerText = '.disables-string .ticker::after {display: inline-block; content: "' + tickerText + '";}';
+    document.head.appendChild(style);
+}
+//#endregion ticker animation
 
 //#region text animation
 function animateTextInLink(link) {
@@ -47,33 +57,6 @@ function titleShortener() {
     title.style.fontSize = titleHeightToSet();
 }
 //#endregion title short animation
-
-//#region show animation enabler
-// function enableShowBlockOneAfterAnother() {
-//     const blocksToShow = document.querySelectorAll('.show-animation');
-
-//     // show that needs to be shown at start
-//     onBodyScroll(blocksToShow);
-
-//     window.addEventListener('scroll', () => { onBodyScroll(blocksToShow) });
-//     window.addEventListener('resize', () => { onBodyScroll(blocksToShow) });
-// }
-
-// function onBodyScroll(blocks) {
-//     const scrollPosition = window.scrollY;
-//     const bottomEdgePosition = scrollPosition + window.pageYOffset;
-
-//     blocks.forEach((block) => {
-//         if (block.getBoundingClientRect().bottom <= bottomEdgePosition) {
-//             showBlock(block);
-//         }
-//     })
-// }
-
-// function showBlock(block) {
-//     block.classList.add('show');
-// }
-
 function onEntry(entry) {
     entry.forEach(change => {
         if (change.isIntersecting) {

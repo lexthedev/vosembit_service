@@ -9,8 +9,6 @@
     --main-background-color: #100016;
     --content-background-color-1: #1e0029;
     --content-background-color-2: #290038;
-    /* --content-background-color-3: #084883;
-    --content-background-color-4: #e397ff; */
 }
 
 /* animations */
@@ -91,12 +89,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-image: linear-gradient(#4b007e, #4b007e), linear-gradient(#333333, #333333);
-    /* background-repeat: no-repeat, no-repeat; */
-    /*background-repeat: repeat, repeat;
-    background-size: 60px 60px, 80px 80px;
-    background-position: top 0px left 0px, top 0px left 0px; */
-
     background-image: url("/img/retrowave_cell_top.jpg");
     background-size: 100% 100%;
 }
@@ -151,25 +143,16 @@ content section.disables-string div {
     overflow: hidden;
 }
 
-content section.disables-string div span {
+content section.disables-string .ticker {
     animation: runnning-string 45s infinite linear;
     display: inline-block;
     white-space: nowrap;
-}
-
-content section.disables-string div span::after {
-    display: inline-block;
-    content: "сломался телефон - не включается планшет - зависла приставка - нужен новый кабель - греется ноутбук, забился вентилятор - лопнул корпус - разбился экран - смартфон медленно заряжается -";
 }
 
 content section.marketing-part {
     display: flex;
     flex-direction: row;
     column-gap: 20px;
-    /* display: grid;
-    flex-direction: row;
-    grid-template-columns: minmax(auto, 300px);
-    grid-row: 300px; */
     align-items: center;
     justify-content: center;
 }
@@ -201,11 +184,6 @@ content section.marketing-part .marketing-info h3 {
 content section.marketing-part .marketing-info p {
     margin-left: 30px;
 }
-
-/* content section.marketing-part .marketing-info .profile-cell {
-    display: grid;
-    grid-template-columns: 60px auto;
-} */
 
 content section.we-proud h2 {
     text-transform: uppercase;
