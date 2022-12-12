@@ -1,0 +1,329 @@
+:root {
+    --title-color-1: #2de2e6;
+    --title-color-2: #035ee8;
+    --title-color-3: #f6019d;
+    --title-color-4: #d40078;
+    --title-color-5: #9700cc;
+    --main-font-color: #eeeeee;
+    --light-font-color: #ffffff;
+    --main-background-color: #100016;
+    --content-background-color-1: #1e0029;
+    --content-background-color-2: #290038;
+    /* --content-background-color-3: #084883;
+    --content-background-color-4: #e397ff; */
+}
+
+/* animations */
+@keyframes runnning-string {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes left-show {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right-show {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bottom-show {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/* animations */
+
+*,
+::after,
+::before,
+::after *,
+::before * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--main-background-color);
+    color: var(--main-font-color);
+    position: relative;
+}
+
+.show-animation {
+    opacity: 0;
+}
+
+.show-animation.show {
+    opacity: 1;
+}
+
+header {
+    /* height: 45px; */
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+}
+
+.main-titile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: linear-gradient(#4b007e, #4b007e), linear-gradient(#333333, #333333);
+    /* background-repeat: no-repeat, no-repeat; */
+    /*background-repeat: repeat, repeat;
+    background-size: 60px 60px, 80px 80px;
+    background-position: top 0px left 0px, top 0px left 0px; */
+
+    background-image: url("/img/retrowave_cell_top.jpg");
+    background-size: 100% 100%;
+}
+
+h1.main-title {
+    transition: 0.2s;
+
+    font-family: sans-serif;
+    font-size: 5vw;
+    font-weight: 900;
+    margin: auto;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(
+        0deg,
+        var(--title-color-1) 20%,
+        var(--title-color-2) 40%,
+        var(--title-color-3) 60%,
+        var(--title-color-4) 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+content {
+    display: block;
+    min-width: 480px;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: var(--content-background-color-1);
+    overflow: hidden;
+}
+
+content section {
+    padding: 20px;
+}
+
+content section:nth-child(odd) {
+    background-color: var(--content-background-color-2);
+}
+
+content section.disables-string {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+content section.disables-string div {
+    overflow: hidden;
+}
+
+content section.disables-string div span {
+    animation: runnning-string 45s infinite linear;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+content section.disables-string div span::after {
+    display: inline-block;
+    content: "сломался телефон - не включается планшет - зависла приставка - нужен новый кабель - греется ноутбук, забился вентилятор - лопнул корпус - разбился экран - смартфон медленно заряжается -";
+}
+
+content section.marketing-part {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    /* display: grid;
+    flex-direction: row;
+    grid-template-columns: minmax(auto, 300px);
+    grid-row: 300px; */
+    align-items: center;
+    justify-content: center;
+}
+
+content section.marketing-part .marketing-image {
+    background-image: url("/img/main_background.jpg");
+    background-size: cover;
+    width: 100%;
+    min-height: 603px;
+    flex: 1;
+}
+
+content section.marketing-part .marketing-image.show {
+    animation: left-show 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+content section.marketing-part .marketing-info {
+    text-transform: uppercase;
+}
+
+content section.marketing-part .marketing-info.show {
+    animation: right-show 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+content section.marketing-part .marketing-info h3 {
+    text-align: center;
+}
+
+content section.marketing-part .marketing-info p {
+    margin-left: 30px;
+}
+
+/* content section.marketing-part .marketing-info .profile-cell {
+    display: grid;
+    grid-template-columns: 60px auto;
+} */
+
+content section.we-proud h2 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+content section.we-proud .profile-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 150px;
+}
+
+.profile-list .profile-cell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(0deg, var(--title-color-2) 80%, var(--title-color-1) 100%);
+    color: var(--light-font-color);
+    font-weight: bold;
+}
+
+.profile-list .profile-cell.show:nth-child(odd) {
+    animation: left-show 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.profile-list .profile-cell.show:nth-child(even) {
+    animation: right-show 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.profile-list .profile-cell div {
+    padding: 30px;
+}
+
+content section.goods-section h2 {
+    text-align: center;
+}
+
+content section.goods-section .goods-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 300px;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.goods-list .goods-cell-wrapper {
+    overflow: hidden;
+}
+
+.goods-list .goods-cell {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.goods-list .goods-cell .name {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.goods-list .goods-cell .icon {
+    position: relative;
+    overflow: hidden;
+    height: calc(100% - 50px);
+}
+
+.goods-list .goods-cell .icon img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+}
+
+.goods-list .goods-cell.show {
+    background: linear-gradient(0deg, var(--title-color-2) 80%, var(--title-color-1) 100%);
+    animation: bottom-show 1s;
+    overflow: hidden;
+}
+
+footer {
+    min-height: 30px;
+    background-image: url("/img/retrowave_cell_bottom.jpg");
+    background-size: 100% auto;
+    background-position: center;
+}
+
+footer .about {
+    color: var(--light-font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+    color: #cab6ff;
+}
+
+.credentials a {
+    color: inherit;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+.credentials a:visited {
+    color: inherit;
+}
+
+.credentials a .elected {
+    font-size: 1.1em;
+}
