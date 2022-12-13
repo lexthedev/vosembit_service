@@ -1,0 +1,203 @@
+:root {
+    --bg-accent-color-1: #271942;
+    --bg-accent-color-2: #4d2d81;
+    --bg-accent-color-3: #5a3a8d;
+    --font-color-1: #f9dce5;
+    --font-color-2: #fff4ff;
+    /* --title-color-1: #2de2e6;
+    --title-color-2: #035ee8;
+    --title-color-3: #f6019d;
+    --title-color-4: #d40078;
+    --title-color-5: #9700cc;
+    --main-font-color: #eeeeee;
+    --light-font-color: #ffffff;
+    --main-background-color: #100016;
+    --content-background-color-1: #1e0029;
+    --content-background-color-2: #290038; */
+}
+
+*,
+::after,
+::before,
+::after *,
+::before * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: auto;
+}
+
+body {
+    background-image: url("/img/v2/game_boy_background.jpg");
+    background-size: cover;
+    overflow: hidden;
+    color: var(--font-color-2);
+}
+
+header {
+    height: 50px;
+    margin: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(
+        to top left,
+        var(--bg-accent-color-3) 1%,
+        var(--bg-accent-color-1) 40%,
+        var(--bg-accent-color-2) 95%,
+        var(--bg-accent-color-3) 100%
+    );
+    color: var(--font-color-1);
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-titile-container {
+    /* display: flex;
+    justify-content: center; */
+}
+
+.main-titile-container h1 {
+    margin: 0 0 0 0;
+}
+
+.content-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.content-container::-webkit-scrollbar {
+    display: none;
+}
+
+content {
+    display: block;
+    padding: 60px;
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* dangerously */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* dangerously */
+}
+
+section {
+    display: block;
+    padding: 30px;
+    margin-bottom: 40px;
+    background: linear-gradient(var(--bg-accent-color-1), var(--bg-accent-color-3));
+}
+
+section > * {
+    border-radius: 10px;
+}
+
+section > h2 {
+    margin-top: 0px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* .marketing-info {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+} */
+
+.marketing-image {
+    background: url("/img/main_background.jpg");
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    box-shadow: 2px 5px 16px black;
+}
+
+/* .marketing-info > div {
+    box-shadow: 2px 5px 16px black;
+    padding: 15px;
+    text-align: center;
+} */
+
+.we-proud {
+    text-align: center;
+}
+
+.grid-3 {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-3 > div {
+    border-radius: 5px;
+    box-shadow: 2px 5px 16px black;
+    padding: 15px;
+    text-align: center;
+}
+
+.goods-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.goods-cell .icon {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 2px 5px 16px black;
+}
+
+.goods-cell .icon img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+/* footer {
+    /* position: sticky; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to top left,
+        var(--bg-accent-color-3) 1%,
+        var(--bg-accent-color-1) 40%,
+        var(--bg-accent-color-2) 95%,
+        var(--bg-accent-color-3) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
